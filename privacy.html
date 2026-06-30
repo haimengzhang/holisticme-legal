@@ -112,7 +112,7 @@
   </div>
 
   <div class="container">
-    <p class="last-updated">Last updated: January 16, 2026</p>
+    <p class="last-updated">Last updated: June 30, 2026</p>
 
     <div class="highlight">
       <p><strong>Summary:</strong> GingerBee is designed to be privacy-first. You can use the app without creating an account, and your wellness data stays on your device by default. AI features securely process information only to generate insights and do not identify you.</p>
@@ -137,16 +137,16 @@
     <h3>2.2 Automatically Collected Information</h3>
     <ul>
       <li><strong>Device Information:</strong> Device type, operating system, and app version</li>
-      <li><strong>Usage Data:</strong> Features used, screens viewed, and interaction patterns</li>
-      <li><strong>Analytics:</strong> Aggregated, anonymized usage statistics</li>
+      <li><strong>Usage Data:</strong> Features used, screens viewed, scan category usage, purchase flow interactions, and other product interaction patterns</li>
+      <li><strong>Analytics:</strong> Product analytics used to understand onboarding dropoff, retention, feature usage, and app performance</li>
     </ul>
 
     <h3>2.3 Device Identifiers</h3>
-    <p>We use a random, anonymous device identifier to support essential functionality such as rate limiting and preventing abuse. This identifier:</p>
+    <p>We use a random, app-scoped device identifier to support essential functionality such as rate limiting, preventing abuse, and measuring product analytics. This identifier:</p>
     <ul>
       <li>Does not contain personal information</li>
       <li>Is not used to track you across other apps or services</li>
-      <li>Cannot be linked to your identity</li>
+      <li>May be associated with your GingerBee account if you choose to sign in, so we can keep analytics continuity between guest and signed-in sessions</li>
       <li>Is stored securely on your device</li>
     </ul>
 
@@ -175,10 +175,11 @@
     <h2>5. Data Sharing</h2>
     <p>We do not sell your personal data. We may share data with:</p>
     <ul>
-      <li><strong>Service Providers:</strong> Cloud hosting (Google), payment processing (Apple/Google), analytics (anonymized)</li>
+      <li><strong>Service Providers:</strong> Cloud hosting (Google), payment processing (Apple/Google), crash reporting (Firebase Crashlytics), and product analytics (Amplitude)</li>
       <li><strong>AI Services:</strong> When you use AI-powered features (such as food analysis, meal planning, or chat), relevant information is sent securely to our AI service providers solely to generate a response. This information is processed transiently and is not used by us or our providers to identify you. Only the minimum necessary information is shared, and personal identifiers are not included.</li>
       <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
     </ul>
+    <p>Amplitude receives behavioral product analytics such as app opens, onboarding progress, scan category events, paywall views, purchase flow events, device/app metadata, and account status if you sign in. We do not send raw symptom names, symptom severity, photos, chat messages, or constitution type to Amplitude unless a future consent flow and privacy disclosure explicitly allow that sharing.</p>
 
     <h2>6. Your Rights</h2>
     <p>You have the right to:</p>
