@@ -112,7 +112,7 @@
   </div>
 
   <div class="container">
-    <p class="last-updated">Last updated: January 16, 2026</p>
+    <p class="last-updated">Last updated: June 30, 2026</p>
 
     <div class="highlight">
       <p><strong>Summary:</strong> GingerBee is designed to be privacy-first. You can use the app without creating an account, and your wellness data stays on your device by default. AI features securely process information only to generate insights and do not identify you.</p>
@@ -125,7 +125,7 @@
 
     <h3>2.1 Information You Provide</h3>
     <ul>
-      <li><strong>Account Information:</strong> GingerBee does not require users to create an account to use core features. We do not collect names, email addresses, or other personal identifiers unless you explicitly choose to create an account in a future version. If you create an account, we collect the information you provide during registration.</li>
+      <li><strong>Account Information:</strong> GingerBee does not require users to create an account to use core features. We do not collect names, email addresses, or other personal identifiers unless you explicitly choose to create or sign in to an account. If you create an account, we collect the information you provide during registration or sign-in.</li>
       <li><strong>Wellness Profile:</strong> Traditional Chinese Medicine (TCM) constitution assessment results, health goals, dietary preferences, and other wellness-related information you choose to provide.</li>
       <li><strong>Symptom Tracking:</strong> Symptoms you log, including symptom names, severity ratings, timing, and optional notes, to help you track patterns over time.</li>
       <li><strong>Food Scans:</strong> Photos of food you scan and the analysis results.</li>
@@ -137,16 +137,16 @@
     <h3>2.2 Automatically Collected Information</h3>
     <ul>
       <li><strong>Device Information:</strong> Device type, operating system, and app version</li>
-      <li><strong>Usage Data:</strong> Features used, screens viewed, and interaction patterns</li>
-      <li><strong>Analytics:</strong> Aggregated, anonymized usage statistics</li>
+      <li><strong>Usage Data:</strong> Features used, screens viewed, scan category usage, purchase flow interactions, and other product interaction patterns</li>
+      <li><strong>Analytics:</strong> Product analytics used to understand onboarding dropoff, retention, feature usage, and app performance</li>
     </ul>
 
     <h3>2.3 Device Identifiers</h3>
-    <p>We use a random, anonymous device identifier to support essential functionality such as rate limiting and preventing abuse. This identifier:</p>
+    <p>We use a random, app-scoped device identifier to support essential functionality such as rate limiting, preventing abuse, and measuring product analytics. This identifier:</p>
     <ul>
       <li>Does not contain personal information</li>
       <li>Is not used to track you across other apps or services</li>
-      <li>Cannot be linked to your identity</li>
+      <li>May be associated with your GingerBee account if you choose to sign in, so we can keep analytics continuity between guest and signed-in sessions</li>
       <li>Is stored securely on your device</li>
     </ul>
 
@@ -163,7 +163,7 @@
 
     <h2>4. Data Storage and Security</h2>
     <h3>Local Data Storage</h3>
-    <p>Your wellness data (such as symptoms, meals, check-ins, and preferences) is stored locally on your device by default. We do not store this information on our servers unless you explicitly opt in to features that require cloud backup or synchronization in a future version.</p>
+    <p>Your wellness data (such as symptoms, meals, check-ins, and preferences) is stored locally on your device by default. We do not store this information on our servers unless you explicitly opt in to features that require cloud backup or synchronization when available.</p>
     <p>When cloud services are used (such as AI-powered recommendations or optional backups), we apply appropriate security measures and minimize the data shared.</p>
     <h3>Security Measures</h3>
     <p>Your data is protected using industry-standard security measures, including encryption in transit and at rest. We use reputable cloud infrastructure providers and apply appropriate administrative, technical, and organizational safeguards to protect your information.</p>
@@ -175,10 +175,11 @@
     <h2>5. Data Sharing</h2>
     <p>We do not sell your personal data. We may share data with:</p>
     <ul>
-      <li><strong>Service Providers:</strong> Cloud hosting (Google), payment processing (Apple/Google), analytics (anonymized)</li>
+      <li><strong>Service Providers:</strong> Cloud hosting (Google), payment processing (Apple/Google), crash reporting (Firebase Crashlytics), and product analytics (Amplitude)</li>
       <li><strong>AI Services:</strong> When you use AI-powered features (such as food analysis, meal planning, or chat), relevant information is sent securely to our AI service providers solely to generate a response. This information is processed transiently and is not used by us or our providers to identify you. Only the minimum necessary information is shared, and personal identifiers are not included.</li>
       <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
     </ul>
+    <p>Amplitude receives behavioral product analytics such as app opens, onboarding progress, scan category events, paywall views, purchase flow events, device/app metadata, and account status if you sign in. We do not send raw symptom names, symptom severity, photos, chat messages, or constitution type to Amplitude unless a future consent flow and privacy disclosure explicitly allow that sharing.</p>
 
     <h2>6. Your Rights</h2>
     <p>You have the right to:</p>
@@ -187,15 +188,15 @@
       <li><strong>Correction:</strong> Update inaccurate information</li>
       <li><strong>Deletion:</strong> Request deletion of your account and data</li>
       <li><strong>Export:</strong> Download your data in a portable format</li>
-      <li><strong>Opt-out:</strong> Disable analytics and marketing communications</li>
+      <li><strong>Opt-out:</strong> Opt out of certain analytics and marketing communications where required or available</li>
     </ul>
 
     <h2>7. Data Retention</h2>
     <p>Since your wellness data is stored locally on your device by default, you control its retention. You can delete your data at any time through the app or by uninstalling the app.</p>
-    <p>If you create an account or opt in to cloud features in a future version:</p>
+    <p>If you create an account or opt in to cloud features when available:</p>
     <ul>
       <li>Personal data is deleted within 30 days of account deletion</li>
-      <li>Anonymized analytics may be retained for service improvement</li>
+      <li>Aggregated or de-identified analytics may be retained for service improvement</li>
       <li>Backup data is purged within 90 days</li>
     </ul>
 
