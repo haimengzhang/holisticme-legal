@@ -112,10 +112,10 @@
   </div>
 
   <div class="container">
-    <p class="last-updated">Last updated: June 30, 2026</p>
+    <p class="last-updated">Last updated: July 7, 2026</p>
 
     <div class="highlight">
-      <p><strong>Summary:</strong> GingerBee is designed to be privacy-first. You can use the app without creating an account, and your wellness data stays on your device by default. AI features securely process information only to generate insights and do not identify you.</p>
+      <p><strong>Summary:</strong> GingerBee is designed to be privacy-first. You can use the app without creating an account, and your wellness data stays on your device by default. One exception: tongue scan photos and their analysis results are stored securely on our servers so you can see how your readings change over time (see Sections 2.1 and 4). AI features securely process information only to generate insights and do not identify you.</p>
     </div>
 
     <h2>1. Introduction</h2>
@@ -130,6 +130,7 @@
       <li><strong>Wellness Profile:</strong> Traditional Chinese Medicine (TCM) constitution assessment results, health goals, dietary preferences, and other wellness-related information you choose to provide, stored locally on your device by default.</li>
       <li><strong>Symptom Tracking:</strong> Symptoms you log, including symptom names, severity ratings, timing, and optional notes, stored locally to help you track patterns over time.</li>
       <li><strong>Food Scans:</strong> Photos of food you scan and the analysis results. Food images are processed securely to generate insights and are not stored by us after analysis unless you explicitly enable a feature that stores them.</li>
+      <li><strong>Tongue Scans:</strong> Photos of your tongue that you scan and the analysis results derived from them, such as tongue coating and color characteristics (used in Traditional Chinese Medicine tongue assessment), together with the time of each scan. Unlike most other wellness data, tongue scan photos and results are stored on our servers so you can see how your readings change over time. Each scan is linked to your random device identifier, and to your account if you are signed in.</li>
       <li><strong>Daily Check-ins:</strong> Sleep, digestion, and mood ratings you log, stored locally on your device by default.</li>
       <li><strong>Chat History:</strong> Conversations with the GingerBee AI assistant, stored locally on your device by default. Messages may be processed transiently by our AI service providers to generate responses.</li>
     </ul>
@@ -148,6 +149,7 @@
       <li>Does not contain personal information</li>
       <li>Is not used to track you across other apps or services</li>
       <li>May be associated with your GingerBee account if you choose to sign in, so we can keep analytics continuity between guest and signed-in sessions</li>
+      <li>Is linked to the tongue scans we store for you, so your scan history and free-scan quota work even without an account</li>
       <li>Is stored securely on your device</li>
     </ul>
 
@@ -157,7 +159,8 @@
       <li>Provide personalized TCM-based health recommendations</li>
       <li>Generate customized meal plans based on your constitution and symptoms</li>
       <li>Analyze food suitability for your specific wellness profile</li>
-      <li>Track your wellness journey and identify patterns</li>
+      <li>Track your wellness journey and identify patterns, including showing you how your tongue scan results change over time</li>
+      <li>Operate the tongue scan service, including managing your scan quota, preventing abuse, and improving the accuracy and quality of the analysis</li>
       <li>Improve app functionality and personalization features</li>
       <li>Provide important service updates and in-app notices. Marketing communications are optional and require your consent where required.</li>
     </ul>
@@ -166,6 +169,14 @@
     <h3>Local Data Storage</h3>
     <p>Your wellness data (such as symptoms, meals, check-ins, and preferences) is stored locally on your device by default. We do not store this information on our servers unless you explicitly opt in to features that require cloud backup or synchronization when available.</p>
     <p>When AI-powered features are used, relevant information is sent securely to generate a response and is processed transiently. If you opt in to cloud backup or synchronization when available, we apply appropriate security measures and minimize the data shared.</p>
+    <h3>Tongue Scan Storage</h3>
+    <p>Tongue scans work differently from most other wellness data. To power your own history and let you see how your readings change over time, we store on our servers:</p>
+    <ul>
+      <li><strong>Your tongue photographs</strong>, kept in a private cloud storage bucket on Google Cloud Platform that is not publicly accessible</li>
+      <li><strong>The analysis results</strong> derived from each photo (such as tongue coating and color characteristics), the scan timestamp, the analysis model version, and the associated device identifier or account ID</li>
+    </ul>
+    <p>Stored tongue scan data is not shared with third parties, except that your photo is processed by our AI analysis provider at the time of the scan solely to generate your results, as described in Section 5.</p>
+    <p><strong>No research use without your explicit consent.</strong> We do not use your tongue images for research or to train AI models beyond providing your own service. Any such use would require a separate, explicit opt-in consent from you. The app does not currently offer this consent option, and until it does, no research use of your tongue images occurs.</p>
     <h3>Security Measures</h3>
     <p>Your data is protected using industry-standard security measures, including encryption in transit and at rest. We use reputable cloud infrastructure providers and apply appropriate administrative, technical, and organizational safeguards to protect your information.</p>
     <ul>
@@ -177,7 +188,7 @@
     <p>We do not sell your personal data. We may share data with:</p>
     <ul>
       <li><strong>Service Providers:</strong> Cloud hosting (Google), payment processing (Apple/Google), crash reporting (Firebase Crashlytics), and product analytics (Amplitude)</li>
-      <li><strong>AI Services:</strong> When you use AI-powered features (such as food analysis, meal planning, or chat), relevant information is sent securely to our AI service providers solely to generate a response. This information is processed transiently and is not used by us or our providers to identify you. Only the minimum necessary information is shared, and personal identifiers are not included.</li>
+      <li><strong>AI Services:</strong> When you use AI-powered features (such as food analysis, tongue analysis, meal planning, or chat), relevant information is sent securely to our AI service providers solely to generate a response. For tongue scans, this means your tongue photo is processed by our AI analysis provider at scan time to produce your results. This information is processed transiently by the provider and is not used by us or our providers to identify you. Only the minimum necessary information is shared, and personal identifiers are not included.</li>
       <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
     </ul>
     <p>Amplitude receives behavioral product analytics such as app opens, onboarding progress, scan category events, paywall views, purchase flow events, device/app metadata, and account status if you sign in. We do not send raw symptom names, symptom severity, photos, chat messages, or constitution type to Amplitude unless a future consent flow and privacy disclosure explicitly allow that sharing.</p>
@@ -194,6 +205,7 @@
 
     <h2>7. Data Retention</h2>
     <p>Since your wellness data is stored locally on your device by default, you control its retention. You can delete your data at any time through the app or by uninstalling the app.</p>
+    <p>Tongue scans stored on our servers are kept so you can view your history over time. When you delete your account, your stored tongue scan photos and analysis results are permanently deleted. You can delete your account and data in the app via <strong>Profile &rarr; Data &amp; Privacy</strong>, or contact us at the email below.</p>
     <p>If you create an account or opt in to cloud features when available:</p>
     <ul>
       <li>Personal data is deleted within 30 days of account deletion</li>
