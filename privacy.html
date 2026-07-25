@@ -112,10 +112,10 @@
   </div>
 
   <div class="container">
-    <p class="last-updated">Last updated: July 8, 2026</p>
+    <p class="last-updated">Last updated: July 23, 2026</p>
 
     <div class="highlight">
-      <p><strong>Summary:</strong> GingerBee is designed to be privacy-first. You can use the app without creating an account, and your wellness data stays on your device by default. Two exceptions: tongue scan photos and their analysis results are stored securely on our servers so you can see how your readings change over time, and your conversations with the GingerBee assistant are stored securely on our servers so you can pick up where you left off (see Sections 2.1 and 4). And when you sign in, your data syncs to your account so a new phone can restore it (see Section 4). AI features securely process information only to generate insights and do not identify you.</p>
+      <p><strong>Summary:</strong> GingerBee is designed to be privacy-first. You can use the app without creating an account, and most of your wellness data stays on your device by default. Three exceptions: tongue scan photos and their analysis results are stored securely on our servers so you can see how your readings change over time; your daily check-ins are also stored on our servers to power your history and trends; and your conversations with the GingerBee assistant are stored securely on our servers so you can pick up where you left off (see Sections 2.1 and 4). When you sign in, your data syncs to your account so a new phone can restore it (see Section 4). If you purchase a practitioner review, we collect your email address to send the payment link and notify you when your review is ready, payment is processed by Stripe (we never receive your card details), and a licensed TCM practitioner views the scans, symptoms, and notes you submit in order to prepare your review (see the Practitioner Review Service section). AI features securely process information only to generate insights and do not identify you.</p>
     </div>
 
     <h2>1. Introduction</h2>
@@ -127,11 +127,13 @@
     <p>Most wellness information described below is stored locally on your device by default and is not sent to our servers unless needed to provide a feature you use. When you sign in, the health data you record is also stored on our servers, linked to your account, so a new phone can restore it (see Section 4).</p>
     <ul>
       <li><strong>Account Information:</strong> GingerBee does not require users to create an account to use core features. We do not collect names, email addresses, or other personal identifiers unless you explicitly choose to create or sign in to an account. If you create an account, we collect the information you provide during registration or sign-in.</li>
+      <li><strong>Email Address (Practitioner Reviews):</strong> If you request a paid practitioner review, we collect an email address (prefilled from your account, and editable by you) so we can send you the secure payment link and notify you when your review is ready. Practitioner reviews require a signed-in account.</li>
       <li><strong>Wellness Profile:</strong> Traditional Chinese Medicine (TCM) constitution assessment results, health goals, dietary preferences, and other wellness-related information you choose to provide, stored locally on your device by default.</li>
       <li><strong>Symptom Tracking:</strong> Symptoms you log, including symptom names, severity ratings, timing, and optional notes, stored locally to help you track patterns over time.</li>
       <li><strong>Food Scans:</strong> Photos of food you scan and the analysis results. Food images are processed securely to generate insights and are not stored by us after analysis unless you explicitly enable a feature that stores them.</li>
       <li><strong>Tongue Scans:</strong> Photos of your tongue that you scan and the analysis results derived from them, such as tongue coating and color characteristics (used in Traditional Chinese Medicine tongue assessment), together with the time of each scan. Unlike most other wellness data, tongue scan photos and results are stored on our servers so you can see how your readings change over time. Each scan is linked to your random device identifier, and to your account if you are signed in.</li>
-      <li><strong>Daily Check-ins:</strong> Sleep, digestion, and mood ratings you log, stored locally on your device by default.</li>
+      <li><strong>Daily Check-ins:</strong> Sleep, digestion, and mood ratings you log. Check-ins are saved on your device, and a copy is also stored on our servers (hosted on Google Cloud in the United States) so we can power your history and trends. Each check-in is linked to your random device identifier, and to your account if you are signed in; check-ins recorded before you sign in are linked to your account when you do.</li>
+      <li><strong>Practitioner Review Requests:</strong> If you request a paid practitioner review, we collect and store the request you submit: the tongue scans you select (up to three), a snapshot of your recent check-in symptoms, an optional note you write (up to 500 characters), and the email address described above. See the Practitioner Review Service section below for how this information is used and who can see it.</li>
       <li><strong>Chat History:</strong> Conversations with the GingerBee AI assistant. Unlike most other wellness data, the messages you exchange with the assistant are stored on our servers, linked to your random device identifier, and to your account if you are signed in, so you can pick up conversations where you left off. Messages may be processed transiently by our AI service providers to generate responses.</li>
     </ul>
     <p>You may choose which information to provide. Some features may not be available without certain data.</p>
@@ -162,6 +164,7 @@
       <li>Track your wellness journey and identify patterns, including showing you how your tongue scan results change over time</li>
       <li>Operate the tongue scan service, including managing your scan quota, preventing abuse, and improving the accuracy and quality of the analysis</li>
       <li>Operate the GingerBee chat service, including keeping your conversations available so you can continue them later and improving the quality of responses</li>
+      <li>Operate the paid practitioner review service: email you the secure payment link, share your submitted scans, symptoms, and notes with the licensed TCM practitioner preparing your review, deliver the finished review (including any voice note from the practitioner) to you in the app, and email you when it is ready</li>
       <li>Sync the health data you record to your account when you sign in, so it can be restored across devices</li>
       <li>Improve app functionality and personalization features</li>
       <li>Provide important service updates and in-app notices. Marketing communications are optional and require your consent where required.</li>
@@ -169,19 +172,30 @@
 
     <h2>4. Data Storage and Security</h2>
     <h3>Local Data Storage</h3>
-    <p>Your wellness data (such as symptoms, meals, check-ins, and preferences) is stored locally on your device by default. We do not store this information on our servers unless you sign in to an account (see Signed-In Account Sync below) or use a feature that stores it, such as tongue scans and GingerBee chat (see below).</p>
+    <p>Your wellness data (such as symptoms, meals, and preferences) is stored locally on your device by default. We do not store this information on our servers unless you sign in to an account (see Signed-In Account Sync below) or use a feature that stores it, such as tongue scans, daily check-ins, GingerBee chat, and practitioner reviews (see below).</p>
     <p>When AI-powered features are used, relevant information is sent securely to generate a response and is processed transiently. When data is stored on our servers, we apply appropriate security measures and minimize the data shared.</p>
     <h3>Tongue Scan Storage</h3>
     <p>Tongue scans work differently from most other wellness data. To power your own history and let you see how your readings change over time, we store on our servers:</p>
     <ul>
-      <li><strong>Your tongue photographs</strong>, kept in a private cloud storage bucket on Google Cloud Platform that is not publicly accessible</li>
+      <li><strong>Your tongue photographs</strong>, kept in a private cloud storage bucket on Google Cloud Platform (in the United States) that is not publicly accessible</li>
       <li><strong>The analysis results</strong> derived from each photo (such as tongue coating and color characteristics), the scan timestamp, the analysis model version, and the associated device identifier or account ID</li>
     </ul>
-    <p>Stored tongue scan data is not shared with third parties, except that your photo is processed by our AI analysis provider at the time of the scan solely to generate your results, as described in Section 5.</p>
+    <p>Stored tongue scan data is not shared with third parties, except that your photo is processed by our AI analysis provider at the time of the scan solely to generate your results, as described in Section 5, and, if you purchase a practitioner review, the licensed practitioner preparing your review views the scans you submit with that request (see Practitioner Review Service below).</p>
+    <h3>Daily Check-in Storage</h3>
+    <p>When you log a daily check-in, it is saved on your device and a copy is also sent to and stored on our servers, hosted on Google Cloud in the United States. Each check-in is linked to your random device identifier, and to your account if you are signed in; check-ins recorded before you sign in are linked to your account when you sign in. We store check-ins to power your history and trends and, if you request a practitioner review, to include a snapshot of your recent symptoms with that request.</p>
     <h3>Chat Conversation Storage</h3>
     <p>Messages you exchange with the GingerBee assistant are stored on our servers, linked to your random device identifier, and to your account if you are signed in. We store these conversations to operate the service, let you pick up conversations where you left off, and improve the quality of responses.</p>
     <p>Stored conversations are kept private and are not shared with third parties, except that your messages are processed by our AI service providers at the time you send them solely to generate a response, as described in Section 5.</p>
-    <p><strong>No research use without your explicit consent.</strong> We do not use your tongue images or your GingerBee conversations for research or to train AI models beyond providing your own service. Any such use would require a separate, explicit opt-in consent from you. The app does not currently offer this consent option, and until it does, no research use of your tongue images or conversations occurs.</p>
+    <h3>Practitioner Review Service</h3>
+    <p>If you purchase a practitioner review, a licensed Traditional Chinese Medicine practitioner reviews your submission and prepares a personal review for you. For this service:</p>
+    <ul>
+      <li><strong>What we store:</strong> your review request (the tongue scans you selected, the snapshot of your recent check-in symptoms, your optional note, and your email address), the request's status, and the finished review the practitioner writes (their structured observations and written summary, and any voice note they record).</li>
+      <li><strong>Practitioner access:</strong> the licensed TCM practitioner assigned to your request views the tongue scan images, symptoms, notes, and AI analysis results you submitted, solely to prepare your review. Practitioners are identified to you by name and credential in your review. Practitioners access your submission through the same secured systems we use; they see the requests assigned to them, not our users' data generally.</li>
+      <li><strong>Voice notes:</strong> the practitioner may record a short voice note as part of your review. Voice notes are stored on our servers in the same private Google Cloud storage bucket as tongue scans (in the United States) and are played back to you in the app through short-lived, access-controlled links.</li>
+      <li><strong>Payment:</strong> payment is processed by Stripe through a secure payment link we email to you. Payment happens entirely outside the app on Stripe's systems: we never receive or store your card number or other payment card details. Stripe notifies us that your payment was completed, and we keep that payment confirmation reference with your request. Stripe's handling of your payment information is described in Stripe's own privacy policy.</li>
+      <li><strong>Emails:</strong> we use your email address for this service to send the payment link and to notify you when your review is ready. These are service emails, not marketing.</li>
+    </ul>
+    <p><strong>No research use without your explicit consent.</strong> We do not use your tongue images, your daily check-ins, your GingerBee conversations, or your practitioner review data for research or to train AI models beyond providing your own service. Any such use would require a separate, explicit opt-in consent from you. The app does not currently offer this consent option, and until it does, no such research use occurs.</p>
     <h3>Signed-In Account Sync</h3>
     <p>When you sign in, the health data you record in the app &mdash; your wellness profile (constitution assessment results, health goals, dietary preferences and allergies, and optional cycle tracking information), symptom logs, daily check-ins, tongue analysis results, food scans, favorites, monthly reports, preferences, and chat history &mdash; is stored on our servers, linked to your account, so it can be restored across devices. If you get a new phone, signing in restores your data. When you delete your account, this synced data is permanently deleted.</p>
     <h3>Security Measures</h3>
@@ -194,7 +208,9 @@
     <h2>5. Data Sharing</h2>
     <p>We do not sell your personal data. We may share data with:</p>
     <ul>
-      <li><strong>Service Providers:</strong> Cloud hosting (Google), payment processing (Apple/Google), crash reporting (Firebase Crashlytics), and product analytics (Amplitude)</li>
+      <li><strong>Service Providers:</strong> Cloud hosting (Google), payment processing (Apple/Google for in-app purchases; Stripe for practitioner reviews), transactional email delivery (Postmark), crash reporting (Firebase Crashlytics), and product analytics (Amplitude)</li>
+      <li><strong>Licensed Practitioners:</strong> If you purchase a practitioner review, the licensed TCM practitioner assigned to your request can view the tongue scans, symptom information, notes, and AI analysis results you submit, solely to prepare your review. Practitioners are identified to you by name and credential.</li>
+      <li><strong>Stripe (Practitioner Review Payments):</strong> Payment for practitioner reviews is processed by Stripe via a payment link sent to your email. We never receive or store your card details; Stripe sends us confirmation that your payment was completed.</li>
       <li><strong>AI Services:</strong> When you use AI-powered features (such as food analysis, tongue analysis, meal planning, or chat), relevant information is sent securely to our AI service providers solely to generate a response. For tongue scans, this means your tongue photo is processed by our AI analysis provider at scan time to produce your results. This information is processed transiently by the provider and is not used by us or our providers to identify you. Only the minimum necessary information is shared, and personal identifiers are not included.</li>
       <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
     </ul>
@@ -212,7 +228,7 @@
 
     <h2>7. Data Retention</h2>
     <p>Since your wellness data is stored locally on your device by default, you control its retention. You can delete your data at any time through the app or by uninstalling the app.</p>
-    <p>Tongue scans and GingerBee chat conversations stored on our servers are kept so you can view your history and continue your conversations over time. Health data synced to your account when you sign in is kept so it can be restored across devices. When you delete your account, your stored tongue scan photos and analysis results, your chat conversations, and your synced health data are permanently deleted. You can delete your account and data in the app via <strong>Profile &rarr; Data &amp; Privacy</strong>, or contact us at the email below.</p>
+    <p>Tongue scans, daily check-ins, and GingerBee chat conversations stored on our servers are kept so you can view your history and continue your conversations over time. Practitioner review requests and finished reviews are kept so you can revisit your reviews. Health data synced to your account when you sign in is kept so it can be restored across devices. When you delete your account, your stored tongue scan photos and analysis results, your practitioner review requests and reviews (including any voice notes), your chat conversations, and your synced health data are permanently deleted. You can delete your account and data in the app via <strong>Profile &rarr; Data &amp; Privacy</strong>, or contact us at the email below.</p>
     <p>If you create an account or opt in to cloud features when available:</p>
     <ul>
       <li>Personal data is deleted within 30 days of account deletion</li>
